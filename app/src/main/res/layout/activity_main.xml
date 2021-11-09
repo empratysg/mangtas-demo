@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a range of date" />
+
+    <EditText
+        android:id="@+id/edt_start_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:hint="Start Date to calculate"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btn_pick_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="pick date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date" />
+
+    <EditText
+        android:id="@+id/edt_end_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:hint="End Date to calculate"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btn_pick_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="pick date" />
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:text="calculate" />
+
+    <TextView
+        android:id="@+id/tv_count_business_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Business Days: " />
+
+    <TextView
+        android:id="@+id/tv_count_fixed_holidays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Fixed Holidays: " />
+
+    <TextView
+        android:id="@+id/tv_count_dynamic_holidays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Dynamic Holidays: " />
+
+    <TextView
+        android:id="@+id/tv_count_weekend_holidays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekend holidays: " />
+</LinearLayout>
