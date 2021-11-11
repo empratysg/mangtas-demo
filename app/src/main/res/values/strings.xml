@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">mangtas_business_days_count</string>
+    <string name="business_days_d">Business Days: %d</string>
+    <string name="fixed_holidays_d">Fixed Holidays: %d</string>
+    <string name="fixed_holidays_in_weekend_d">Fixed Holidays(in weekend): %d</string>
+    <string name="dynamic_holidays_d">Dynamic Holidays: %d</string>
+    <string name="weekend_holidays_d">Weekend holidays: %d</string>
+    <string name="pick_a_range_of_date">Pick a range of date</string>
+    <string name="start_date_to_calculate">Start Date to calculate</string>
+    <string name="pick_date">pick date</string>
+    <string name="end_date">End Date</string>
+    <string name="end_date_to_calculate">End Date to calculate</string>
+    <string name="calculate">calculate</string>
+    <string name="error_end_date_invalid">End date is not valid</string>
+    <string name="error_start_date_invalid">Start date is not valid</string>
+    <string name="error_start_date_before_end_date">Start date must before End date</string>
 </resources>
