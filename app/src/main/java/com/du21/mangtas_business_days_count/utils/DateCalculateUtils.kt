@@ -137,7 +137,7 @@ object DateCalculateUtils {
 
             holidaysArray.forEach { h ->
                 c.set(startYear, h.month, h.day, 0, 0, 0)
-                if (c.timeInMillis in cStart.timeInMillis..cEnd.timeInMillis) {
+                if(checkRangeWeekendHoliday(c,cStart, cEnd)){
                     count++
                 }
             }
@@ -153,20 +153,38 @@ object DateCalculateUtils {
 
             holidaysArray.forEach { h ->
                 c.set(startYear, h.month, h.day, 0, 0, 0)
-                if (c.timeInMillis in cStart.timeInMillis..lastDayOfStartCalendar.timeInMillis) {
+
+                if (checkRangeWeekendHoliday(c,cStart, lastDayOfStartCalendar)) {
                     count++
                 }
                 c.set(endYear, h.month, h.day, 0, 0, 0)
-                if (c.timeInMillis in firstDayOfEndCalendar.timeInMillis..cEnd.timeInMillis) {
+                if (checkRangeWeekendHoliday(c,firstDayOfEndCalendar, cEnd)) {
                     count++
                 }
-
 
             }
 
         }
 
         return count
+    }
+
+    private fun checkRangeWeekendHoliday(c: Calendar, cStart: Calendar, cEnd: Calendar): Boolean {
+        if (c.timeInMillis !in cStart.timeInMillis..cEnd.timeInMillis) {
+            return false
+        }
+        if (c[Calendar.DAY_OF_WEEK] == Calendar.SATURDAY &&
+            (c[Calendar.DAY_OF_YEAR] == cEnd[Calendar.DAY_OF_YEAR] ||
+                    c[Calendar.DAY_OF_YEAR] == cEnd[Calendar.DAY_OF_YEAR] - 1)
+        ) {
+
+            return false
+
+        }
+        if (c[Calendar.DAY_OF_WEEK] == Calendar.SUNDAY && c[Calendar.DAY_OF_YEAR] == cEnd[Calendar.DAY_OF_YEAR]) {
+            return false
+        }
+        return true
     }
 
     private fun countDynamicHolidays(

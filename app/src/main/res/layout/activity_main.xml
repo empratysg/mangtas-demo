@@ -111,13 +111,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@{@string/dynamic_holidays_d(viewModel.calculateResult.weekendHolidays)}" />
+            android:text="@{@string/weekend_holidays_d(viewModel.calculateResult.weekendHolidays)}" />
 
         <TextView
             android:id="@+id/tv_count_weekend_holidays"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{@string/weekend_holidays_d(viewModel.calculateResult.dynamicHoliday)}" />
+            android:text="@{@string/dynamic_holidays_d(viewModel.calculateResult.dynamicHoliday)}" />
     </LinearLayout>
 
 </layout>

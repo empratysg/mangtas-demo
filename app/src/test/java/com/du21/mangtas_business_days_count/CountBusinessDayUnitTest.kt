@@ -17,18 +17,6 @@ class CountBusinessDayUnitTest {
     private val dataSource = FakeDataSource()
 
     @Test
-    fun testDemo(){
-        assertEquals(false, checkValidDateRange(null,null))
-        assertEquals(false, checkValidDateRange(null,""))
-        assertEquals(false, checkValidDateRange("",null))
-        assertEquals(true, checkValidDateRange("",""))
-    }
-
-    private fun checkValidDateRange(startDateText: String?, endDateText: String?): Boolean {
-        if(startDateText==null||endDateText==null) return false
-        return true
-    }
-    @Test
     fun range0Day_isCorrect() {
         assertEquals(
             0,
@@ -208,7 +196,7 @@ class CountBusinessDayUnitTest {
     @Test
     fun range1YearBetween2Years2_isCorrect() {
         assertEquals(
-            348,
+            347,
             DateCalculateUtils.countBusinessDays(
                 Date(2020, 2, 21),
                 Date(2021, 7, 9),
